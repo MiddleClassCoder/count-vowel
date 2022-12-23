@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Count Vowel</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main">
+        <h2>Counter</h2>
+        <p>This is the program that will count the number of vowel and consonent</p>
+        <input type="text" placeholder="enter word" class="text">
+        <button class="btn" onclick="getValue()">Submit</button>
+        <p class="display-vowel"></p>
+        <p class="display-consonent"></p>
+    </div>
+
+    <script>
+        let count_Vowel=0;
+        let count_Consonent=0;
+        function getValue(){
+            let val = document.querySelector(".text").value;
+            let arr = val.split("");
+
+            for(let i=0;i<arr.length;i++){
+                if(arr[i]=="a" || arr[i] == "e" || arr[i] == "i" || arr[i] == "o" || arr[i] == "u"){
+                    count_Vowel++;
+                }
+                else{
+                    count_Consonent++;
+                }
+            }
+           document.querySelector(".display-vowel").innerHTML = `No. of vowel :- ${count_Vowel}`;
+           document.querySelector(".display-consonent").innerHTML = `No. of consonent :- ${count_Consonent}`;
+        }
+    </script>
+</body>
+</html>
